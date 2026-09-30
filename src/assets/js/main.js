@@ -343,7 +343,7 @@ for (let i = 0; i < leafCount; i++) {
 const introKicker = gsap.from(".intro-kicker", {
     opacity: 0,
     y: 30,
-    duration: 0.8,
+    duration: 1.8,
     paused: true,
 });
 
@@ -365,11 +365,11 @@ const introDescription = gsap.from(".intro-description", {
 
 ScrollTrigger.create({
     trigger: ".intro-section",
-    start: "top 75%",
+    start: "top 65%",
 
     onEnter: () => {
         introKicker.restart();
-        introTitle.restart();
+        introTitle.restart({ delay: 2 });
         introDescription.restart();
     },
 
@@ -494,30 +494,6 @@ ScrollTrigger.create({
     onEnterBack: () => {
         endTitle.restart();
         endDescription.restart();
-    },
-});
-
-/* =========================================================
-   NAV COLOR / BLEND
-========================================================= */
-
-ScrollTrigger.create({
-    trigger: ".intro-section",
-
-    start: "top 20%",
-
-    onEnter: () => {
-        gsap.to(".nav", {
-            color: "#eee5d7",
-            duration: 0.5,
-        });
-    },
-
-    onLeaveBack: () => {
-        gsap.to(".nav", {
-            color: "#eee5d7",
-            duration: 0.5,
-        });
     },
 });
 
