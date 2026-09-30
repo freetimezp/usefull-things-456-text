@@ -1,24 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/vite.svg" type="image/svg+xml" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="./src/assets/css/style.css" />
-        <title>Project</title>
+
+        <title>Autumn — Grotesk</title>
     </head>
 
     <body>
-        <div class="h-[300vh] w-full p-8 bg-[#141414] overflow-hidden">
-            <div class="text-container w-full flex items-center justify-center text-center">
-                <h1 id="fall-text" class="text-[18rem] inline-block uppercase text-white">GROTESK</h1>
+        <!-- =====================================================
+             grain
+        ====================================================== -->
+
+        <div class="grain"></div>
+
+        <!-- =====================================================
+             NAV
+        ====================================================== -->
+
+        <header class="nav">
+            <div class="nav-logo">
+                <span class="logo-dot"></span>
+                AUTUMN / 26
             </div>
-        </div>
+
+            <div class="nav-center">A STUDY IN FALL</div>
+
+            <div class="nav-right">
+                <span>SCROLL TO EXPLORE</span>
+                <span class="nav-line"></span>
+            </div>
+        </header>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <main>
+            <section class="hero">
+                <div class="hero-glow"></div>
+
+                <!-- distant particles -->
+                <div class="particles"></div>
+
+                <!-- falling leaves -->
+                <div class="leaves"></div>
+
+                <div class="hero-top">
+                    <div class="hero-index">
+                        <span>01</span>
+                        <span>—</span>
+                        <span>SEASONAL BEAUTY</span>
+                    </div>
+
+                    <div class="hero-date">SEPTEMBER — NOVEMBER</div>
+                </div>
+
+                <div class="hero-title-wrap">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        A VISUAL STUDY OF
+                        <span class="eyebrow-accent">AUTUMN</span>
+                    </div>
+
+                    <h1 id="fall-text">GROTESK</h1>
+
+                    <div class="title-bottom">
+                        <p>
+                            A quiet collection of falling forms, fading light
+                            and changing landscapes.
+                        </p>
+
+                        <span class="scroll-number"> 01 / 05 </span>
+                    </div>
+                </div>
+
+                <div class="hero-bottom">
+                    <div class="location">
+                        <span class="small-dot"></span>
+                        NORTHERN HEMISPHERE
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <span>SCROLL</span>
+                        <span class="scroll-arrow">↓</span>
+                    </div>
+
+                    <div class="temperature">08° / 17°</div>
+                </div>
+            </section>
+
+            <!-- =================================================
+                 INTRO
+            ================================================== -->
+
+            <section class="intro-section">
+                <div class="section-number">02 / ATMOSPHERE</div>
+
+                <div class="intro-content">
+                    <p class="intro-kicker">WHEN THE AIR GETS QUIET</p>
+
+                    <h2>
+                        Everything
+                        <em>begins</em>
+                        to fall.
+                    </h2>
+
+                    <div class="intro-description">
+                        <p>
+                            Autumn is not an ending. It is a slow transformation
+                            of color, temperature and light.
+                        </p>
+
+                        <p>
+                            Leaves leave the trees. Shadows become longer. The
+                            world becomes quieter.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="intro-leaf">
+                    <span>✦</span>
+                </div>
+            </section>
+
+            <!-- =================================================
+                 IMAGE / EDITORIAL PANEL
+            ================================================== -->
+
+            <section class="visual-section">
+                <video
+                    class="autumn-video"
+                    src="./src/assets/videos/bg.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                ></video>
+
+                <div class="visual-overlay"></div>
+
+                <div class="visual-content">
+                    <div class="visual-small">FIELD NOTE / 003</div>
+
+                    <h2>
+                        GOLDEN<br />
+                        <span>HOUR</span>
+                    </h2>
+
+                    <p>
+                        The last warm light of the year arrives lower on the
+                        horizon.
+                    </p>
+                </div>
+
+                <div class="visual-coordinates">
+                    51° 03' 12"N<br />
+                    13° 44' 22"E
+                </div>
+
+                <div class="video-progress">
+                    <span class="video-progress-line"></span>
+                    <span>ATMOSPHERE / 03</span>
+                </div>
+            </section>
+
+            <!-- =================================================
+                 END
+            ================================================== -->
+
+            <section class="end-section">
+                <div class="end-number">05</div>
+
+                <h2>
+                    LET IT
+                    <em>FALL.</em>
+                </h2>
+
+                <p>A seasonal archive of movement, light and disappearance.</p>
+
+                <div class="end-line"></div>
+
+                <span> AUTUMN / 2026 </span>
+            </section>
+        </main>
+
+        <!-- =====================================================
+             GSAP
+        ====================================================== -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Physics2DPlugin.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
 
         <script type="module" src="./src/assets/js/main.js"></script>
