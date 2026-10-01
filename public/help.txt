@@ -1,0 +1,147 @@
+ 
+<span>01</span>
+<span>—</span>
+<span>SEASONAL BEAUTY</span>
+
+
+SEPTEMBER — NOVEMBER
+
+
+<span class="eyebrow-line"></span>
+A VISUAL STUDY OF
+<span class="eyebrow-accent">AUTUMN</span>
+
+
+A quiet collection of falling forms, fading light
+and changing landscapes.
+
+
+<span class="small-dot"></span>
+NORTHERN HEMISPHERE
+
+
+08° / 17°
+
+
+WHEN THE AIR GETS QUIET
+
+
+Everything
+<em>begins</em>
+to fall.
+
+
+Autumn is not an ending. It is a slow transformation
+of color, temperature and light.
+
+
+Leaves leave the trees. Shadows become longer. The
+world becomes quieter.
+
+
+✦
+
+
+FIELD NOTE / 003
+
+
+GOLDEN<br />
+<span>HOUR</span>
+
+
+The last warm light of the year arrives lower on the
+horizon.
+
+
+51° 03' 12"N<br />
+13° 44' 22"E
+
+
+ATMOSPHERE / 03
+
+
+LET IT
+<em>FALL.</em>
+
+
+A seasonal archive of movement, light and disappearance.
+
+
+
+
+
+
+
+
+:root {
+    --bg: #17110d;
+    --bg-dark: #0e0a08;
+
+    --cream: #eee5d7;
+    --muted: #a89d8f;
+
+    --orange: #c8662c;
+    --burnt: #8e3f22;
+    --gold: #d69a4b;
+
+    --serif: "Instrument Serif", serif;
+    --mono: "DM Mono", monospace;
+}
+
+
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+
+
+@keyframes grainMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2%, 1%);
+    }
+
+    50% {
+        transform: translate(1%, -2%);
+    }
+
+    75% {
+        transform: translate(2%, 2%);
+    }
+
+    100% {
+        transform: translate(-1%, -1%);
+    }
+}
+
+
+transition:
+        background-color 0.5s ease,
+        backdrop-filter 0.5s ease,
+        -webkit-backdrop-filter 0.5s ease,
+        box-shadow 0.5s ease,
+        border-color 0.5s ease,
+        padding 0.5s ease;
+
+
+
+
+
+const text = document.getElementById("fall-text");
+const leavesContainer = document.querySelector(".leaves");
+const particlesContainer = document.querySelector(".particles");
+
+
+
+
+const leafColors = [
+    "#8d351e",
+    "#b45225",
+    "#c76c2f",
+    "#7c3d22",
+    "#d38b42",
+    "#6d3020",
+];
+
+
+

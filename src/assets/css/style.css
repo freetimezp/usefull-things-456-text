@@ -1,12 +1,28 @@
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     list-style: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --bg: #17110d;
+    --bg-dark: #0e0a08;
+
+    --cream: #eee5d7;
+    --muted: #a89d8f;
+
+    --orange: #c8662c;
+    --burnt: #8e3f22;
+    --gold: #d69a4b;
+
+    --serif: "Instrument Serif", serif;
+    --mono: "DM Mono", monospace;
 }
 
 html {
@@ -26,36 +42,12 @@ body {
 
 a {
     color: inherit;
-    text-decoration: none;
 }
 
 ::selection {
     background: #d77b32;
     color: #17110d;
 }
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root {
-    --bg: #17110d;
-    --bg-dark: #0e0a08;
-
-    --cream: #eee5d7;
-    --muted: #a89d8f;
-
-    --orange: #c8662c;
-    --burnt: #8e3f22;
-    --gold: #d69a4b;
-
-    --serif: "Instrument Serif", serif;
-    --mono: "DM Mono", monospace;
-}
-
-/* =========================================================
-   GRAIN
-========================================================= */
 
 .grain {
     position: fixed;
@@ -97,13 +89,8 @@ a {
     }
 }
 
-/* =========================================================
-   NAV
-========================================================= */
-
 .nav {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -135,8 +122,6 @@ a {
     border-bottom: 1px solid transparent;
 }
 
-/* activated after scrolling */
-
 .nav.scrolled {
     padding-top: 18px;
     padding-bottom: 18px;
@@ -162,9 +147,7 @@ a {
 .logo-dot {
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
-
     background: var(--orange);
 }
 
@@ -189,16 +172,10 @@ a {
     background: currentColor;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero {
     position: relative;
-
     height: 100vh;
     min-height: 720px;
-
     overflow: hidden;
 
     display: flex;
@@ -221,7 +198,6 @@ a {
 
 .hero::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -237,7 +213,6 @@ a {
 
 .hero-glow {
     position: absolute;
-
     width: 50vw;
     height: 50vw;
 
@@ -252,10 +227,6 @@ a {
 
     pointer-events: none;
 }
-
-/* =========================================================
-   HERO TOP
-========================================================= */
 
 .hero-top {
     position: absolute;
@@ -279,13 +250,8 @@ a {
     gap: 12px;
 }
 
-/* =========================================================
-   TITLE
-========================================================= */
-
 .hero-title-wrap {
     position: relative;
-
     width: 100%;
 
     padding: 0 4vw;
@@ -297,10 +263,8 @@ a {
 
 .eyebrow {
     display: flex;
-
-    justify-content: center;
     align-items: center;
-
+    justify-content: center;
     gap: 12px;
 
     margin-bottom: 12px;
@@ -309,7 +273,6 @@ a {
 
     font-family: var(--mono);
     font-size: 10px;
-
     letter-spacing: 0.18em;
 }
 
@@ -326,7 +289,6 @@ a {
 
 #fall-text {
     position: relative;
-
     display: inline-block;
 
     margin: 0;
@@ -335,7 +297,6 @@ a {
 
     font-size: clamp(7rem, 20vw, 20rem);
     line-height: 0.72;
-
     font-weight: 500;
     letter-spacing: -0.075em;
 
@@ -359,15 +320,14 @@ a {
     margin: 42px auto 0;
 
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
 
     text-align: left;
 }
 
 .title-bottom p {
     width: 270px;
-
     color: var(--muted);
 
     font-size: 12px;
@@ -382,13 +342,8 @@ a {
     letter-spacing: 0.15em;
 }
 
-/* =========================================================
-   HERO BOTTOM
-========================================================= */
-
 .hero-bottom {
     position: absolute;
-
     bottom: 30px;
     left: 34px;
     right: 34px;
@@ -402,7 +357,6 @@ a {
 
     font-family: var(--mono);
     font-size: 9px;
-
     letter-spacing: 0.12em;
 }
 
@@ -415,17 +369,14 @@ a {
 .small-dot {
     width: 5px;
     height: 5px;
-
     border-radius: 50%;
-
     background: var(--orange);
 }
 
 .scroll-indicator {
     display: flex;
-    flex-direction: column;
     align-items: center;
-
+    flex-direction: column;
     gap: 8px;
 
     color: var(--cream);
@@ -433,7 +384,6 @@ a {
 
 .scroll-arrow {
     font-size: 16px;
-
     animation: scrollArrow 2s ease-in-out infinite;
 }
 
@@ -442,7 +392,6 @@ a {
     100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(6px);
     }
@@ -452,48 +401,31 @@ a {
     justify-self: end;
 }
 
-/* =========================================================
-   PARTICLES
-========================================================= */
-
 .particles {
     position: absolute;
     inset: 0;
-
     pointer-events: none;
-
     z-index: 2;
 }
 
 .particle {
     position: absolute;
-
     width: 2px;
     height: 2px;
-
     border-radius: 50%;
-
     background: rgba(238, 229, 215, 0.45);
 }
-
-/* =========================================================
-   LEAVES
-========================================================= */
 
 .leaves {
     position: absolute;
     inset: 0;
-
     overflow: hidden;
-
     pointer-events: none;
-
     z-index: 7;
 }
 
 .leaf {
     position: absolute;
-
     width: var(--size);
     height: calc(var(--size) * 1.3);
 
@@ -512,9 +444,7 @@ a {
 
 .leaf::after {
     content: "";
-
     position: absolute;
-
     left: 50%;
     top: 5%;
 
@@ -526,13 +456,10 @@ a {
     transform: rotate(-10deg);
 }
 
-/* =========================================================
-   INTRO
-========================================================= */
+/* intro  */
 
 .intro-section {
     position: relative;
-
     min-height: 110vh;
 
     padding: 150px 8vw 180px;
@@ -540,38 +467,31 @@ a {
     display: grid;
     grid-template-columns: 1fr 3fr;
 
-    background:
-        radial-gradient(
-            circle at 75% 20%,
-            rgba(163, 73, 25, 0.12),
-            transparent 30%
-        ),
-        #211611;
+    background: radial-gradient(
+        circle at 75% 20%,
+        rgba(163, 73, 25, 0.12),
+        #211611
+    );
 }
 
 .section-number {
     color: var(--orange);
-
     font-family: var(--mono);
     font-size: 10px;
-
     letter-spacing: 0.15em;
 }
 
 .intro-content {
     position: relative;
-
     max-width: 1000px;
 }
 
 .intro-kicker {
     margin-bottom: 55px;
-
     color: var(--muted);
 
     font-family: var(--mono);
     font-size: 10px;
-
     letter-spacing: 0.18em;
 }
 
@@ -579,30 +499,24 @@ a {
     max-width: 850px;
 
     font-size: clamp(5rem, 11vw, 12rem);
-
     line-height: 0.82;
-
     letter-spacing: -0.06em;
-
     font-weight: 500;
 }
 
 .intro-content h2 em {
     color: var(--orange);
-
     font-family: var(--serif);
     font-weight: 400;
 }
 
 .intro-description {
     max-width: 470px;
-
     margin-top: 90px;
     margin-left: 25%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 35px;
 }
 
@@ -615,7 +529,6 @@ a {
 
 .intro-leaf {
     position: absolute;
-
     right: 10vw;
     bottom: 10%;
 
@@ -633,9 +546,7 @@ a {
 
 .intro-leaf::after {
     content: "";
-
     position: absolute;
-
     left: 50%;
     top: 5%;
 
@@ -650,13 +561,10 @@ a {
     display: none;
 }
 
-/* =========================================================
-   AUTUMN VIDEO SECTION
-========================================================= */
+/*  visual */
 
 .visual-section {
     position: relative;
-
     width: 100%;
     height: 100vh;
     min-height: 700px;
@@ -671,14 +579,12 @@ a {
 
 .autumn-video {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
     z-index: 0;
 
     filter: saturate(0.8) contrast(1.08) brightness(0.72);
@@ -688,13 +594,9 @@ a {
     will-change: transform;
 }
 
-/* cinematic darkening */
-
 .visual-overlay {
     position: absolute;
-
     inset: 0;
-
     z-index: 1;
 
     background: linear-gradient(
@@ -708,15 +610,10 @@ a {
     pointer-events: none;
 }
 
-/* warm cinematic glow */
-
 .visual-section::after {
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     z-index: 2;
 
     pointer-events: none;
@@ -730,17 +627,11 @@ a {
     mix-blend-mode: screen;
 }
 
-/* =========================================================
-   VIDEO CONTENT
-========================================================= */
-
 .visual-content {
     position: relative;
-
     z-index: 4;
 
     margin-left: 9vw;
-
     max-width: 900px;
 }
 
@@ -751,19 +642,14 @@ a {
 
     font-family: var(--mono);
     font-size: 10px;
-
     letter-spacing: 0.2em;
 }
 
 .visual-content h2 {
     font-size: clamp(6rem, 14vw, 15rem);
-
     line-height: 0.72;
-
     letter-spacing: -0.07em;
-
     font-weight: 500;
-
     color: var(--cream);
 }
 
@@ -779,19 +665,12 @@ a {
     margin-top: 55px;
 
     color: rgba(238, 229, 215, 0.72);
-
     font-size: 12px;
-
     line-height: 1.7;
 }
 
-/* =========================================================
-   COORDINATES
-========================================================= */
-
 .visual-coordinates {
     position: absolute;
-
     right: 35px;
     bottom: 35px;
 
@@ -800,48 +679,33 @@ a {
     color: rgba(238, 229, 215, 0.55);
 
     font-family: var(--mono);
-
     font-size: 9px;
-
     line-height: 1.7;
-
     letter-spacing: 0.1em;
 }
 
-/* =========================================================
-   VIDEO PROGRESS
-========================================================= */
-
 .video-progress {
     position: absolute;
-
     left: 50%;
     bottom: 35px;
-
     z-index: 5;
 
     transform: translateX(-50%);
 
     display: flex;
     align-items: center;
-
     gap: 14px;
 
     color: rgba(238, 229, 215, 0.55);
-
     font-family: var(--mono);
-
     font-size: 8px;
-
     letter-spacing: 0.16em;
 }
 
 .video-progress-line {
     position: relative;
-
     width: 80px;
     height: 1px;
-
     overflow: hidden;
 
     background: rgba(238, 229, 215, 0.25);
@@ -849,9 +713,7 @@ a {
 
 .video-progress-line::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     top: 0;
 
@@ -867,19 +729,15 @@ a {
     from {
         transform: translateX(-100%);
     }
-
     to {
         transform: translateX(300%);
     }
 }
 
-/* =========================================================
-   END SECTION
-========================================================= */
+/* end section */
 
 .end-section {
     position: relative;
-
     min-height: 100vh;
 
     padding: 150px 8vw;
@@ -898,7 +756,6 @@ a {
 
     font-family: var(--mono);
     font-size: 10px;
-
     letter-spacing: 0.15em;
 }
 
@@ -908,9 +765,7 @@ a {
     font-size: clamp(7rem, 17vw, 18rem);
 
     line-height: 0.7;
-
     letter-spacing: -0.08em;
-
     font-weight: 500;
 }
 
@@ -928,16 +783,13 @@ a {
     margin-left: 40%;
 
     color: var(--muted);
-
     font-size: 12px;
     line-height: 1.8;
 }
 
 .end-line {
     width: 100%;
-
     height: 1px;
-
     margin-top: 100px;
 
     background: rgba(238, 229, 215, 0.15);
@@ -945,18 +797,12 @@ a {
 
 .end-section > span {
     margin-top: 20px;
-
     color: var(--muted);
 
     font-family: var(--mono);
     font-size: 9px;
-
     letter-spacing: 0.15em;
 }
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 800px) {
     .nav {
@@ -1014,9 +860,7 @@ a {
 
     .intro-section {
         min-height: 100vh;
-
         padding: 100px 25px;
-
         display: block;
     }
 
@@ -1076,7 +920,6 @@ a {
 
     .video-progress {
         left: 25px;
-
         transform: none;
     }
 

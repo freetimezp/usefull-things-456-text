@@ -1,9 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
 const text = document.getElementById("fall-text");
 const leavesContainer = document.querySelector(".leaves");
 const particlesContainer = document.querySelector(".particles");
@@ -12,9 +8,16 @@ if (!text) {
     throw new Error("Missing #fall-text element");
 }
 
-/* =========================================================
-   SPLIT TEXT
-========================================================= */
+// lenis
+
+const lenis = new Lenis();
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
+// split text
 
 const splitText = SplitText.create(text, {
     type: "chars",
@@ -31,9 +34,7 @@ gsap.set(chars, {
     scale: 1,
 });
 
-/* =========================================================
-   NAV — SCROLL GLASS
-========================================================= */
+// nav scroll
 
 const nav = document.querySelector(".nav");
 
@@ -51,9 +52,7 @@ if (nav) {
     });
 }
 
-/* =========================================================
-   HERO INTRO
-========================================================= */
+// hero intro
 
 const heroIntro = gsap.timeline({
     defaults: {
@@ -67,6 +66,7 @@ heroIntro
         opacity: 0,
         duration: 1.2,
     })
+
     .from(
         ".hero-top",
         {
@@ -76,6 +76,7 @@ heroIntro
         },
         "-=0.7",
     )
+
     .from(
         ".eyebrow",
         {
@@ -85,17 +86,19 @@ heroIntro
         },
         "-=0.7",
     )
+
     .from(
         chars,
         {
             opacity: 0,
             y: 100,
-            stagger: 0.09,
             duration: 1.2,
+            stagger: 0.09,
             ease: "power4.out",
         },
         "-=0.6",
     )
+
     .from(
         ".title-bottom",
         {
@@ -105,6 +108,7 @@ heroIntro
         },
         "-=0.7",
     )
+
     .from(
         ".hero-bottom",
         {
@@ -114,9 +118,7 @@ heroIntro
         "-=0.7",
     );
 
-/* =========================================================
-   FALLING LETTERS
-========================================================= */
+// falling letters
 
 function fallLetters() {
     gsap.killTweensOf(chars);
@@ -134,7 +136,6 @@ function fallLetters() {
             delay: index * 0.045,
 
             ease: "power2.in",
-
             overwrite: true,
         });
     });
@@ -167,7 +168,6 @@ function restoreLetters() {
 
 ScrollTrigger.create({
     trigger: ".hero",
-
     start: "top top",
     end: "bottom top",
 
@@ -188,14 +188,9 @@ ScrollTrigger.create({
     },
 });
 
-/* =========================================================
-   HERO PARALLAX
-========================================================= */
-
 gsap.to(".hero-title-wrap", {
     y: -180,
     opacity: 0.2,
-
     ease: "none",
 
     scrollTrigger: {
@@ -209,7 +204,6 @@ gsap.to(".hero-title-wrap", {
 gsap.to(".hero-glow", {
     scale: 1.5,
     opacity: 0,
-
     ease: "none",
 
     scrollTrigger: {
@@ -223,7 +217,6 @@ gsap.to(".hero-glow", {
 gsap.to(".hero-top", {
     y: -100,
     opacity: 0,
-
     ease: "none",
 
     scrollTrigger: {
@@ -234,13 +227,11 @@ gsap.to(".hero-top", {
     },
 });
 
-/* =========================================================
-   CREATE PARTICLES
-========================================================= */
+// particles
 
-const particleCount = 45;
+const particlesCount = 45;
 
-for (let i = 0; i < particleCount; i++) {
+for (let i = 0; i < particlesCount; i++) {
     const particle = document.createElement("span");
 
     particle.className = "particle";
@@ -251,12 +242,11 @@ for (let i = 0; i < particleCount; i++) {
     particlesContainer.appendChild(particle);
 
     gsap.to(particle, {
-        y: `random(-100, 100)`,
-        x: `random(-50, 50)`,
+        x: `random(-50,50)`,
+        y: `random(-100,100)`,
 
-        opacity: `random(0.1, 0.8)`,
-
-        duration: `random(3, 7)`,
+        opacity: "random(0.1, 0.8)",
+        duration: "random(3, 7)",
 
         repeat: -1,
         yoyo: true,
@@ -267,9 +257,7 @@ for (let i = 0; i < particleCount; i++) {
     });
 }
 
-/* =========================================================
-   CREATE LEAVES
-========================================================= */
+// leaves
 
 const leafColors = [
     "#8d351e",
@@ -298,9 +286,9 @@ for (let i = 0; i < leafCount; i++) {
 
     leaf.style.setProperty("--opacity", gsap.utils.random(0.25, 0.8));
 
-    leaf.style.setProperty("--rotation", `${gsap.utils.random(-180, 180)}deg`);
+    leaf.style.setProperty("--rotaion", ` ${gsap.utils.random(0.25, 0.8)}deg`);
 
-    leaf.style.setProperty("--blur", `${gsap.utils.random(0, 1.5)}px`);
+    leaf.style.setProperty("--blur", ` ${gsap.utils.random(0, 1.5)}px`);
 
     leavesContainer.appendChild(leaf);
 
@@ -336,9 +324,7 @@ for (let i = 0; i < leafCount; i++) {
     });
 }
 
-/* =========================================================
-   INTRO SECTION
-========================================================= */
+// intro
 
 const introKicker = gsap.from(".intro-kicker", {
     opacity: 0,
@@ -348,16 +334,16 @@ const introKicker = gsap.from(".intro-kicker", {
 });
 
 const introTitle = gsap.from(".intro-content h2", {
-    y: 120,
     opacity: 0,
+    y: 120,
     duration: 1.4,
     ease: "power4.out",
     paused: true,
 });
 
 const introDescription = gsap.from(".intro-description", {
-    y: 80,
     opacity: 0,
+    y: 80,
     duration: 1.2,
     ease: "power3.out",
     paused: true,
@@ -380,10 +366,6 @@ ScrollTrigger.create({
     },
 });
 
-/* =========================================================
-   INTRO LEAF
-========================================================= */
-
 gsap.fromTo(
     ".intro-leaf",
     {
@@ -393,34 +375,24 @@ gsap.fromTo(
     {
         rotation: 160,
         y: -120,
-
         ease: "none",
 
         scrollTrigger: {
             trigger: ".intro-section",
-
             start: "top bottom",
             end: "bottom top",
-
             scrub: 1,
         },
     },
 );
 
-/* =========================================================
-   AUTUMN VIDEO
-========================================================= */
+// video
 
 const autumnVideo = document.querySelector(".autumn-video");
 
 if (autumnVideo) {
     autumnVideo.play().catch(() => {});
 }
-
-/* =========================================================
-   VIDEO SECTION
-   REPLAY ON EVERY ENTER
-========================================================= */
 
 const videoContent = gsap.from(".visual-content", {
     y: 120,
@@ -438,7 +410,7 @@ const videoSmall = gsap.from(".visual-small", {
     paused: true,
 });
 
-const videoCoordinates = gsap.from(".visual-coordinates", {
+const videoCoordinates = gsap.from(".video-coordinates", {
     opacity: 0,
     duration: 1.2,
     paused: true,
@@ -461,10 +433,7 @@ ScrollTrigger.create({
     },
 });
 
-/* =========================================================
-   END SECTION
-   REPLAY ON EVERY ENTER
-========================================================= */
+// end section
 
 const endTitle = gsap.from(".end-section h2", {
     y: 150,
@@ -477,7 +446,7 @@ const endTitle = gsap.from(".end-section h2", {
 const endDescription = gsap.from(".end-section p", {
     y: 50,
     opacity: 0,
-    duration: 1,
+    duration: 1.5,
     ease: "power3.out",
     paused: true,
 });
@@ -497,9 +466,7 @@ ScrollTrigger.create({
     },
 });
 
-/* =========================================================
-   RESIZE
-========================================================= */
+// resize
 
 let resizeTimer;
 

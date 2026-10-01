@@ -2,31 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@200..800&display=swap"
             rel="stylesheet"
         />
 
         <link rel="stylesheet" href="./src/assets/css/style.css" />
 
-        <title>Autumn — Grotesk</title>
+        <title>usefull-things-456-text</title>
     </head>
-
     <body>
-        <!-- =====================================================
-             grain
-        ====================================================== -->
-
         <div class="grain"></div>
-
-        <!-- =====================================================
-             NAV
-        ====================================================== -->
 
         <header class="nav">
             <div class="nav-logo">
@@ -42,18 +33,12 @@
             </div>
         </header>
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
         <main>
             <section class="hero">
                 <div class="hero-glow"></div>
 
-                <!-- distant particles -->
                 <div class="particles"></div>
 
-                <!-- falling leaves -->
                 <div class="leaves"></div>
 
                 <div class="hero-top">
@@ -81,7 +66,7 @@
                             and changing landscapes.
                         </p>
 
-                        <span class="scroll-number"> 01 / 05 </span>
+                        <span class="scroll-number">01 / 05</span>
                     </div>
                 </div>
 
@@ -99,10 +84,6 @@
                     <div class="temperature">08° / 17°</div>
                 </div>
             </section>
-
-            <!-- =================================================
-                 INTRO
-            ================================================== -->
 
             <section class="intro-section">
                 <div class="section-number">02 / ATMOSPHERE</div>
@@ -134,14 +115,10 @@
                 </div>
             </section>
 
-            <!-- =================================================
-                 IMAGE / EDITORIAL PANEL
-            ================================================== -->
-
             <section class="visual-section">
                 <video
-                    class="autumn-video"
                     src="./src/assets/videos/bg.mp4"
+                    class="autumn-video"
                     autoplay
                     muted
                     loop
@@ -176,10 +153,6 @@
                 </div>
             </section>
 
-            <!-- =================================================
-                 END
-            ================================================== -->
-
             <section class="end-section">
                 <div class="end-number">05</div>
 
@@ -192,17 +165,15 @@
 
                 <div class="end-line"></div>
 
-                <span> AUTUMN / 2026 </span>
+                <span>AUTUMN / 2026</span>
             </section>
         </main>
 
-        <!-- =====================================================
-             GSAP
-        ====================================================== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/SplitText.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
 
         <script type="module" src="./src/assets/js/main.js"></script>
     </body>
